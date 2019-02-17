@@ -23,7 +23,7 @@ public class CodeStatistics {
 	
 	public static Comparator<fun> compfun = new Comparator<fun>() {
         @Override public int compare(fun p1, fun p2) {
-            return p1.hash - p2.hash; // Ascending
+            return p1.length - p2.length; // Ascending
         }
     };
 	

@@ -29,8 +29,8 @@ public class Main {
 		loader.visit(tree);
 		Collections.sort(loader.stats.funList, CodeStatistics.compfun);
 		for (fun f : loader.stats.funList) {
-			//if(f.length >= 0.03*loader.stats.totalLen)    // PORCENTAJE A CAMBIAR 
-			System.out.println(f.name + "  l  " + f.hash );
+			if(f.length >= 0.03*loader.stats.totalLen)    // PORCENTAJE A CAMBIAR 
+				System.out.println(f.name + "  l  " + f.length );
 		}
 		
 		for (fun f : loader.stats.funList) {
