@@ -3,6 +3,8 @@ package classes;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.antlr.v4.runtime.tree.ParseTree;
+
 import classes.Python3Parser.*;
 public class MyVisitor<T> extends Python3BaseVisitor<T> {
 
@@ -28,10 +30,9 @@ public class MyVisitor<T> extends Python3BaseVisitor<T> {
 		//System.out.println("Entro a una funcion " + ctx.NAME() + " line " + l + ":" + c);
 		//System.out.println(ctx.getText().length());
 		//System.out.println(ctx.getSourceInterval().length());
-		int count_parameters = 0;	
-		if (ctx.parameters().typedargslist() != null) {
-			count_parameters = ctx.parameters().typedargslist().getChildCount();
-			//System.out.println( count_parameters + " ->  Numero de parametros");
+		int count_parameters = 0;
+		if(ctx.parameters().typedargslist() != null && ctx.parameters().typedargslist().COMMA().size() > 0) {
+			count_parameters = ctx.parameters().typedargslist().COMMA().size() +1;
 		}
 		int hash = 0;
 		stats.addfun("" + ctx.NAME(), ctx.getSourceInterval().length(),count_parameters,hash,l,c);

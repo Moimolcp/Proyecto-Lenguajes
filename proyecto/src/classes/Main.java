@@ -19,6 +19,7 @@ import classes.CodeStatistics.fun;
 
 public class Main {
 	
+	
 	public static void main(String args[]) throws Exception {
 		
 		System.setIn(new FileInputStream(new File("code.py")));

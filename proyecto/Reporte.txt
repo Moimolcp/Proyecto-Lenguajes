@@ -1,14 +1,20 @@
-Funcion demasiado extensa, 	 linea11:4	 ID: placing_ships_on_the_field
-Funcion demasiado extensa, 	 linea59:4	 ID: shooting
+No se encontraron funciones extensas 
 -----------------------------------------------------------------------
-Funcion con demasiados parametros (5), 	 linea 19:8	 ID: place_ship
+Funcion con demasiados parametros (4), 	 linea 44:4	 ID: getLegalCards
 -----------------------------------------------------------------------
-Funcion no usada en el codigo, 	 linea 11:4	 ID: placing_ships_on_the_field
-Funcion no usada en el codigo, 	 linea 59:4	 ID: shooting
+Funcion no usada en el codigo, 	 linea 80:4	 ID: getValidCards
+Funcion no usada en el codigo, 	 linea 102:4	 ID: getID
+Funcion no usada en el codigo, 	 linea 123:4	 ID: decreaseForceDraw
+Funcion no usada en el codigo, 	 linea 86:4	 ID: hasLegalCard
+Funcion no usada en el codigo, 	 linea 1299:4	 ID: next
+Funcion no usada en el codigo, 	 linea 374:4	 ID: place
+Funcion no usada en el codigo, 	 linea 283:4	 ID: getRandomIdentity
+Funcion no usada en el codigo, 	 linea 1430:4	 ID: removePlayer1
 -----------------------------------------------------------------------
-No se encontraron funciones con nombre demasiado corto
+Funcion con nombre demasiado corto, 	 linea 821:4	 ID: end
+Funcion con nombre demasiado corto, 	 linea 1326:0	 ID: Uno
 -----------------------------------------------------------------------
-Funcion con nombre demasiado largo, 	 linea 11:4	 ID: placing_ships_on_the_field
+No se encontraron funciones con nombre demasiado largo 
 -----------------------------------------------------------------------
-Clase demasiado extensa, 	 linea6:0	 ID: AI
+Clase demasiado extensa, 	 linea716:0	 ID: Match
 -----------------------------------------------------------------------

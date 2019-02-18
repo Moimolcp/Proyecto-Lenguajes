@@ -719,6 +719,7 @@ public class Python3Parser extends Parser {
 		return _localctx;
 	}
 
+	
 	public static class FuncdefContext extends ParserRuleContext {
 		public TerminalNode DEF() { return getToken(Python3Parser.DEF, 0); }
 		public TerminalNode NAME() { return getToken(Python3Parser.NAME, 0); }
