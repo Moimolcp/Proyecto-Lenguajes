@@ -43,6 +43,14 @@ public class Main {
 			System.out.println("Funcion no usada en el codigo, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name);
 		}
 		
+		for (fun f : loader.stats.funList) {
+			if(f.name.length() <= 3)
+				System.out.println("Funcion con nombre demasiado corto, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name);
+			if(f.name.length() >= 25)
+				System.out.println("Funcion con nombre demasiado largo, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name);
+		}
+		
+		
 	}
 
 }

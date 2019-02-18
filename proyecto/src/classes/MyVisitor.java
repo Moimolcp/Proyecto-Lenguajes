@@ -3,15 +3,7 @@ package classes;
 import java.util.HashSet;
 import java.util.Set;
 
-import classes.Python3Parser.AtomContext;
-import classes.Python3Parser.Atom_exprContext;
-import classes.Python3Parser.ClassdefContext;
-import classes.Python3Parser.File_inputContext;
-import classes.Python3Parser.FuncdefContext;
-import classes.Python3Parser.Single_inputContext;
-import classes.Python3Parser.TfpdefContext;
-import classes.Python3Parser.TrailerContext;
-
+import classes.Python3Parser.*;
 public class MyVisitor<T> extends Python3BaseVisitor<T> {
 
 	
@@ -23,23 +15,26 @@ public class MyVisitor<T> extends Python3BaseVisitor<T> {
 	public T visitFile_input(File_inputContext ctx) {
 		//System.out.println("Primera regla");
 		//System.out.println(ctx.getText().length());
-		stats.totalLen = ctx.getText().length();
+		stats.totalLen = ctx.getSourceInterval().length();
+		System.out.println(ctx.getSourceInterval().length());
 		return super.visitFile_input(ctx);
 	}
 	
 	@Override
-	public T visitFuncdef(FuncdefContext ctx) {		
+	public T visitFuncdef(FuncdefContext ctx) {
+				
 		int c = ctx.DEF().getSymbol().getCharPositionInLine();
 		int l = ctx.DEF().getSymbol().getLine();
 		//System.out.println("Entro a una funcion " + ctx.NAME() + " line " + l + ":" + c);
 		//System.out.println(ctx.getText().length());
+		System.out.println(ctx.getSourceInterval().length());
 		int count_parameters = 0;	
 		if (ctx.parameters().typedargslist() != null) {
 			count_parameters = ctx.parameters().typedargslist().getChildCount();
 			//System.out.println( count_parameters + " ->  Numero de parametros");
 		}
 		int hash = 0;
-		stats.addfun("" + ctx.NAME(), ctx.getText().length(),count_parameters,hash,l,c);
+		stats.addfun("" + ctx.NAME(), ctx.getSourceInterval().length(),count_parameters,hash,l,c);
 		
 		return super.visitFuncdef(ctx);	
 	}
@@ -50,9 +45,9 @@ public class MyVisitor<T> extends Python3BaseVisitor<T> {
 		int l = ctx.CLASS().getSymbol().getLine();
 		//System.out.println("Entro a una clase " + ctx.NAME() + " line " + l + ":" + c);
 		//System.out.println(ctx.getText().length());
-		int count_parameters = 0;		
+		int count_parameters = 0;
 		int hash = 0;	
-		stats.addclas("" + ctx.NAME(), ctx.getText().length(),count_parameters,hash,l,c);		
+		stats.addclas("" + ctx.NAME(), ctx.getSourceInterval().length(),count_parameters,hash,l,c);		
 		
 		return super.visitClassdef(ctx);
 	}
@@ -68,5 +63,7 @@ public class MyVisitor<T> extends Python3BaseVisitor<T> {
 		if(ctx.NAME() != null) set.add(ctx.NAME().getText());
 		return super.visitTrailer(ctx);
 	}
+	
+	
 
 }
