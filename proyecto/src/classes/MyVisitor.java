@@ -16,7 +16,7 @@ public class MyVisitor<T> extends Python3BaseVisitor<T> {
 		//System.out.println("Primera regla");
 		//System.out.println(ctx.getText().length());
 		stats.totalLen = ctx.getSourceInterval().length();
-		System.out.println(ctx.getSourceInterval().length());
+		//System.out.println(ctx.getSourceInterval().length());
 		return super.visitFile_input(ctx);
 	}
 	
@@ -27,7 +27,7 @@ public class MyVisitor<T> extends Python3BaseVisitor<T> {
 		int l = ctx.DEF().getSymbol().getLine();
 		//System.out.println("Entro a una funcion " + ctx.NAME() + " line " + l + ":" + c);
 		//System.out.println(ctx.getText().length());
-		System.out.println(ctx.getSourceInterval().length());
+		//System.out.println(ctx.getSourceInterval().length());
 		int count_parameters = 0;	
 		if (ctx.parameters().typedargslist() != null) {
 			count_parameters = ctx.parameters().typedargslist().getChildCount();

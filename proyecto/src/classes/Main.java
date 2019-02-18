@@ -1,7 +1,9 @@
 package classes;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -10,13 +12,16 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.tree.*;import classes.CodeStatistics.fun;
+import org.antlr.v4.runtime.tree.*;
+
+import classes.CodeStatistics.clas;
+import classes.CodeStatistics.fun;
 
 public class Main {
 	
 	public static void main(String args[]) throws Exception {
 		
-		System.setIn(new FileInputStream(new File("test.py")));
+		System.setIn(new FileInputStream(new File("code.py")));
 		
 		ANTLRInputStream input = new ANTLRInputStream(System.in);
 		
@@ -25,31 +30,45 @@ public class Main {
 		Python3Parser parser = new Python3Parser(tokens);
 		ParseTree tree = parser.file_input();
 		
+		String fileName = "reporte";
+	    BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));	     
+	    
 		MyVisitor<Object> loader = new MyVisitor<Object>();
 		loader.visit(tree);
 		Collections.sort(loader.stats.funList, CodeStatistics.compfun);
-		for (fun f : loader.stats.funList) {
-			if(f.length >= 0.03*loader.stats.totalLen)    // PORCENTAJE A CAMBIAR 
-				System.out.println("Funcion demasiado larga, \t linea" + f.line + ":" + f.col + "\t ID: " + f.name );
-		}
+		String txt;
+		
+		//writer.write(str);
 		
 		for (fun f : loader.stats.funList) {
-			if(f.parameters >= 4)   
-			System.out.println("Funcion con demasiados parametros (" + f.parameters + "), \t linea "  + f.line + ":" + f.col + "\t ID: " + f.name);
+			if(f.length >= 0.2*loader.stats.totalLen) {
+				txt = "Funcion demasiado larga, \t linea" + f.line + ":" + f.col + "\t ID: " + f.name;
+				writer.write(txt);
+			}			
+			if(f.parameters >= 4)   {
+				txt = "Funcion con demasiados parametros (" + f.parameters + "), \t linea "  + f.line + ":" + f.col + "\t ID: " + f.name;
+				writer.write(txt);
+			}				
+			if(!loader.set.contains(f.name) && f.name.charAt(0) != '_') {
+				txt = "Funcion no usada en el codigo, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name;
+				writer.write(txt);
+			}				
+			if(f.name.length() <= 3) {
+				txt = "Funcion con nombre demasiado corto, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name;
+				writer.write(txt);
+			}				
+			if(f.name.length() >= 25) {
+				txt = "Funcion con nombre demasiado largo, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name;
+				writer.write(txt);
+			}
+				
 		}
-		
-		for (fun f : loader.stats.funList) {
-			if(!loader.set.contains(f.name) && f.name.charAt(0) != '_')
-			System.out.println("Funcion no usada en el codigo, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name);
+
+		for (clas f : loader.stats.clasList) {
+			
 		}
-		
-		for (fun f : loader.stats.funList) {
-			if(f.name.length() <= 3)
-				System.out.println("Funcion con nombre demasiado corto, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name);
-			if(f.name.length() >= 25)
-				System.out.println("Funcion con nombre demasiado largo, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name);
-		}
-		
+			
+		writer.close();		
 		
 	}
 
