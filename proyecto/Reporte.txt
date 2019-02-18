@@ -1,20 +1,14 @@
-No se encontraron funciones extensas 
+Funcion demasiado extensa, 	 linea450:0	 ID: TicTacToe
 -----------------------------------------------------------------------
-Funcion con demasiados parametros (4), 	 linea 44:4	 ID: getLegalCards
+Funcion con demasiados parametros (4), 	 linea 273:4	 ID: trapSimulation
 -----------------------------------------------------------------------
-Funcion no usada en el codigo, 	 linea 80:4	 ID: getValidCards
-Funcion no usada en el codigo, 	 linea 102:4	 ID: getID
-Funcion no usada en el codigo, 	 linea 123:4	 ID: decreaseForceDraw
-Funcion no usada en el codigo, 	 linea 86:4	 ID: hasLegalCard
-Funcion no usada en el codigo, 	 linea 1299:4	 ID: next
-Funcion no usada en el codigo, 	 linea 374:4	 ID: place
-Funcion no usada en el codigo, 	 linea 283:4	 ID: getRandomIdentity
-Funcion no usada en el codigo, 	 linea 1430:4	 ID: removePlayer1
+Funcion no usada en el codigo, 	 linea 200:4	 ID: getIdentity
+Funcion no usada en el codigo, 	 linea 239:4	 ID: defineStrategy
+Funcion no usada en el codigo, 	 linea 143:4	 ID: buildString
 -----------------------------------------------------------------------
-Funcion con nombre demasiado corto, 	 linea 821:4	 ID: end
-Funcion con nombre demasiado corto, 	 linea 1326:0	 ID: Uno
+Funcion con nombre demasiado corto, 	 linea 185:4	 ID: win
 -----------------------------------------------------------------------
 No se encontraron funciones con nombre demasiado largo 
 -----------------------------------------------------------------------
-Clase demasiado extensa, 	 linea716:0	 ID: Match
+Clase demasiado extensa, 	 linea209:0	 ID: computer
 -----------------------------------------------------------------------
