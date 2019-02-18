@@ -94,13 +94,13 @@ public class Main {
 		writer.write("-----------------------------------------------------------------------\r\n");		
 		for (fun f : loader.stats.funList) {
 			if(f.name.length() >= 25) {
-				txt = "Funcion con nombre demasiado largo, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name  + "\n";
+				txt = "Funcion con nombre demasiado largo, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name  + "\r\n";
 				writer.write(txt);
 				trigger= false;
 			}				
 		}
 		if (trigger) {
-			txt = "No se encontraron funciones con nombre demasiado largo\r\n";
+			txt = "No se encontraron funciones con nombre demasiado largo \r\n";
 			writer.write(txt);
 		}
 		trigger= true;
