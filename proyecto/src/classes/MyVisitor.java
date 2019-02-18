@@ -45,9 +45,8 @@ public class MyVisitor<T> extends Python3BaseVisitor<T> {
 		int l = ctx.CLASS().getSymbol().getLine();
 		//System.out.println("Entro a una clase " + ctx.NAME() + " line " + l + ":" + c);
 		//System.out.println(ctx.getText().length());
-		int count_parameters = 0;
 		int hash = 0;	
-		stats.addclas("" + ctx.NAME(), ctx.getSourceInterval().length(),count_parameters,hash,l,c);		
+		stats.addclas("" + ctx.NAME(), ctx.getSourceInterval().length(),hash,l,c);		
 		
 		return super.visitClassdef(ctx);
 	}

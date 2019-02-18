@@ -28,16 +28,13 @@ public class CodeStatistics {
 	public class clas {
 		public String name;
 		public int length;
-		public int parameters;
 		public int hash;
 		public int line;
 		public int col;
 		
-		
-		public clas(String name ,int lenght, int parameters, int hash,int line, int col) {
+		public clas(String name ,int lenght, int hash,int line, int col) {
 			this.name = name;
 			this.length = lenght;
-			this.parameters = parameters;
 			this.hash = hash;
 			this.line = line;
 			this.col = col;
@@ -65,8 +62,8 @@ public class CodeStatistics {
 		funList.add(new fun(name,length,parameters,hash,l,c));
 	}
 	
-	public void addclas(String name, int length, int parameters,int hash,int l,int c) {		
-		clasList.add(new clas(name,length,parameters,hash,l,c));
+	public void addclas(String name, int length,int hash,int l,int c) {		
+		clasList.add(new clas(name,length,hash,l,c));
 	}
 
 }

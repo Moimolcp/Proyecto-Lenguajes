@@ -1,10 +1,5 @@
-Funcion no usada en el codigo, 	 linea 80:4	 ID: getValidCards
-Funcion no usada en el codigo, 	 linea 102:4	 ID: getID
-Funcion no usada en el codigo, 	 linea 123:4	 ID: decreaseForceDraw
-Funcion no usada en el codigo, 	 linea 86:4	 ID: hasLegalCard
-Funcion no usada en el codigo, 	 linea 1299:4	 ID: next
-Funcion no usada en el codigo, 	 linea 374:4	 ID: place
-Funcion no usada en el codigo, 	 linea 283:4	 ID: getRandomIdentity
+No se encontraron funciones extensas 
+-----------------------------------------------------------------------
 Funcion con demasiados parametros (9), 	 linea 114:4	 ID: getHand
 Funcion con demasiados parametros (6), 	 linea 489:4	 ID: getCardByValue
 Funcion con demasiados parametros (6), 	 linea 501:4	 ID: getCardByColor
@@ -16,11 +11,25 @@ Funcion con demasiados parametros (5), 	 linea 398:4	 ID: indexCard
 Funcion con demasiados parametros (7), 	 linea 592:4	 ID: getBigNum
 Funcion con demasiados parametros (5), 	 linea 352:4	 ID: populate
 Funcion con demasiados parametros (5), 	 linea 1302:4	 ID: getNextTurn
-Funcion no usada en el codigo, 	 linea 1430:4	 ID: removePlayer1
 Funcion con demasiados parametros (7), 	 linea 624:4	 ID: getRow
 Funcion con demasiados parametros (5), 	 linea 1047:4	 ID: placeCard
 Funcion con demasiados parametros (9), 	 linea 44:4	 ID: getLegalCards
 Funcion con demasiados parametros (9), 	 linea 173:4	 ID: show
-Funcion con nombre demasiado corto, 	 linea 821:4	 ID: end
 Funcion con demasiados parametros (9), 	 linea 1230:4	 ID: drawScreen
+-----------------------------------------------------------------------
+Funcion no usada en el codigo, 	 linea 80:4	 ID: getValidCards
+Funcion no usada en el codigo, 	 linea 102:4	 ID: getID
+Funcion no usada en el codigo, 	 linea 123:4	 ID: decreaseForceDraw
+Funcion no usada en el codigo, 	 linea 86:4	 ID: hasLegalCard
+Funcion no usada en el codigo, 	 linea 1299:4	 ID: next
+Funcion no usada en el codigo, 	 linea 374:4	 ID: place
+Funcion no usada en el codigo, 	 linea 283:4	 ID: getRandomIdentity
+Funcion no usada en el codigo, 	 linea 1430:4	 ID: removePlayer1
+-----------------------------------------------------------------------
+Funcion con nombre demasiado corto, 	 linea 821:4	 ID: end
 Funcion con nombre demasiado corto, 	 linea 1326:0	 ID: Uno
+-----------------------------------------------------------------------
+No se encontraron funciones con nombre demasiado largo
+-----------------------------------------------------------------------
+Clase demasiado extensa, 	 linea716:0	 ID: Match
+-----------------------------------------------------------------------
