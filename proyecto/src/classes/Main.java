@@ -30,12 +30,17 @@ public class Main {
 		Collections.sort(loader.stats.funList, CodeStatistics.compfun);
 		for (fun f : loader.stats.funList) {
 			if(f.length >= 0.03*loader.stats.totalLen)    // PORCENTAJE A CAMBIAR 
-				System.out.println(f.name + "  l  " + f.length );
+				System.out.println("Funcion demasiado larga, \t linea" + f.line + ":" + f.col + "\t ID: " + f.name );
 		}
 		
 		for (fun f : loader.stats.funList) {
 			if(f.parameters >= 4)   
-			System.out.println(f.name + "  P  " + f.parameters);
+			System.out.println("Funcion con demasiados parametros (" + f.parameters + "), \t linea "  + f.line + ":" + f.col + "\t ID: " + f.name);
+		}
+		
+		for (fun f : loader.stats.funList) {
+			if(!loader.set.contains(f.name) && f.name.charAt(0) != '_')
+			System.out.println("Funcion no usada en el codigo, \t linea " + f.line + ":" + f.col + "\t ID: " + f.name);
 		}
 		
 	}
